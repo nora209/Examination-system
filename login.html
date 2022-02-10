@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+   <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <div class="mydiv">
+        <div class="container">
+            <form  name ="logForm" action="exam.html" onsubmit="return valid(event)">
+                <h1>Login</h1>
+               <div class="EmailInput">
+                 <label for="Email"><b>Enter Your Email</b></label><span id="em"> * required</span>
+                 <input type="email" name="email" id="email" placeholder="your Email">
+               </div>
+             
+             <div class="passInput">
+                 <label for="password"><b>Enter you password</b></label><span id="ps">* required</span>
+                 <input type="password" name="psw" id="pass" placeholder="Enter Your Password">
+             </div>
+             <!-- <a href="registration.html">Forget Password</a> -->
+              <button id="log">Login</button>
+         
+         
+             </form>
+          </div>
+    </div>
+   
+                
+    <script src="login.js"></script>
+</body>
+</html>
