@@ -111,6 +111,7 @@ function qMark(){
             var div = document.createElement('div');
             div.id = arr[question_count].id;
             div.className = "markDiv1";
+           
             div.innerHTML = "Q" + (question_count + 1) + ") ";
             div.onclick = function () {
                 for (var i=0;i<arr.length;i++){
@@ -254,7 +255,7 @@ function CountGrage() {
 ///////////timer//////
 
 var myVar = setInterval(function(){ myTimer() }, 1000);
-var secondlimit = 30;
+var secondlimit = 50;
 
 function myTimer() {
     if(secondlimit == 0)

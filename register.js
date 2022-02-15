@@ -6,8 +6,8 @@ var pass_rep = document.getElementById("psw-repeat");
 
 var form= document.getElementsByClassName(" regForm");
 
-
-//var span= document.querySelectorAll("span");
+//var allSpan = document.querySelectorAll('span');
+//var span= document.querySelector('span');
 
 
 
@@ -35,47 +35,51 @@ function validation(){
   var spn4 = document.getElementById("sp4");
   var spn5=document.getElementById("sp5");
 
-  if(fnameValue =="")
+  if(fnameValue =="" )
     {
         // e.preventDefault();
         spn.textContent="* required";
         spn.style.display="inline";
-       // fnameValue.focus();
+
        return false;
     }
     else if (isFinite(fnameValue)) {
         // e.preventDefault();
         spn.textContent = "* you must enter string value";
         spn.style.display = "inline";
-       //  fnameValue.focus();
+     
         return false;
     }
     else if(lnameValue ==""){
         // e.preventDefault();
           spn2.textContent="* required"
           spn2.style.display="inline";
-       //    lnameValue.focus();
+           spn.style.display="none";
           return false;
          
     }
      else if (isFinite(lnameValue)) {
         // e.preventDefault();
-          spn2.textContent = "you must enter string value";
+          spn2.textContent = "* you must enter string value";
           spn2.style.display = "inline";
-       //   lnameValue.focus();
+          spn.style.display="none";
           return false;
       }
      else  if (inpvalEmail =="") {
         // e.preventDefault();
         spn3.textContent = "* required";
         spn3.style.display = "inline";
-     // inpvalEmail.focus();
+        spn2.style.display="none";
+        spn.style.display = "none";
       return false;
     }
     else if (!regMail.test(inpvalEmail)) {
         // e.preventDefault();
         spn3.textContent = "* you must enter Right Email With @";
         spn3.style.display = "inline";
+        spn3.style.display = "inline";
+        spn2.style.display="none";
+        spn.style.display = "none";
         return false;
     }
    else if (password =="")
@@ -83,6 +87,9 @@ function validation(){
         // e.preventDefault();
         spn4.textContent ="* required";
         spn4.style.display = "inline";
+        spn3.style.display = "none";
+        spn2.style.display="none";
+        spn.style.display = "none";
       // password.focus();
        return false;
     }
@@ -91,6 +98,10 @@ function validation(){
         // e.preventDefault();
         spn5.textContent="* required";
         spn5.style.display = "inline";
+        spn4.style.display = "none";
+        spn3.style.display = "none";
+        spn2.style.display="none";
+        spn.style.display = "none";
       //  pass_repeat.focus();
       return false;
     }
@@ -98,9 +109,15 @@ function validation(){
     // e.preventDefault();
         spn5.innerHTML="* Not Matched Password";
         spn5.style.display = "inline";
+        spn4.style.display = "none";
+        spn3.style.display = "none";
+        spn2.style.display="none";
+        spn.style.display = "none";
         return false;
     }
+  
    else{
+    //span.style.display = "none";
       setCookie("fname",fnameValue,new Date("2/1/2030"));
       setCookie("lname",lnameValue,new Date("2/1/2030"));
       setCookie("email",inpvalEmail,new Date("2/1/2030"));

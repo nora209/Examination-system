@@ -43,6 +43,7 @@ function valid(e){
         e.preventDefault();
         emailSpn.textContent="Wrong Email";
         emailSpn.style.display="inline";
+        passSpn.style.display="none";
         return false;
     }
     else if(pass !== passVlu)
@@ -50,6 +51,7 @@ function valid(e){
         e.preventDefault();
         passSpn.textContent="Wrong Password";
         passSpn.style.display="inline";
+        emailSpn.style.display="none";
         return false;
     }
     else{
